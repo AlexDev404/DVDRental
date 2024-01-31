@@ -1,0 +1,1 @@
+g++ -Iinclude\ -Iinclude\sqlite\ -Iinclude\sqlite-orm\ main.cpp
