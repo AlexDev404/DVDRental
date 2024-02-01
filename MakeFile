@@ -1,16 +1,38 @@
 # Variables
 CXX = g++
-INCLUDE_DIRS = -Iinclude -Iinclude/sqlite -Iinclude/sqlite-orm
+INCLUDE_DIRS = -IC:/mingw32/i686-w64-mingw32/include -I/usr/include -Iinclude -Iinclude/sqlite -Iinclude/sqlite-orm -m32
 SRC = main.cpp
 OUT = main.exe
 
 # Default rule
 all: $(OUT)
 
+# Compile commands
+comp_comm:
+	@echo "Generating compile_commands.json..."
+	@make --always-make --dry-run \
+		| grep -wE 'gcc|g\+\+' \
+		| grep -w '\-c' \
+		| jq -nR '[inputs|{directory:".", command:., file: match(" [^ ]+$").string[1:]}]' \
+		> compile_commands.json
+	@echo "Compile command database generated."
+
 # Rule for building the main program
 $(OUT): $(SRC)
-	$(CXX) $(INCLUDE_DIRS) $< -o $@
+# Build SQLite3
+	gcc $(INCLUDE_DIRS) -c include/sqlite/sqlite3.c -o sqlite3.o -std=c11 -Wall -Wextra -Wpedantic -Wl,--allow-multiple-definition
+
+# Rule for building the main program and linking with SQLite3
+	$(CXX) $(INCLUDE_DIRS) $< -o $@ sqlite3.o -lpthread -ldl -std=c++17 -Wall -Wextra -Wpedantic -Werror -static-libgcc -static-libstdc++
+
+build:
+# Rule for building the main program and linking with SQLite3
+	$(CXX) $(INCLUDE_DIRS) $(SRC) -o $(OUT) sqlite3.o -lpthread -ldl -std=c++17 -Wall -Wextra -Wpedantic -Werror -static-libgcc -static-libstdc++
+
+# sqlite3.o:
+# # Build SQLite3
+# 	gcc $(INCLUDE_DIRS) -c include/sqlite/sqlite3.c -o sqlite3.o -std=c11 -Wall -Wextra -Wpedantic -Wl,--allow-multiple-definition
 
 # Rule for cleaning the workspace
 clean:
-	rm -f $(OUT)
+	rm -f $(OUT) sqlite3.o
