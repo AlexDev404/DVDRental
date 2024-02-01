@@ -2,6 +2,8 @@
 #include <sqlite-orm/sqlite_orm.h>
 #include <database/schemas/user.h>
 #include <database/schemas/product.h>
+#include <database/schemas/rental.h>
+#include <database/schemas/category.h>
 using namespace sqlite_orm;
 
 // https://github.com/fnc12/sqlite_orm
@@ -23,10 +25,15 @@ auto database::newDatabase(string database_name)
         User user;
         // Import the product schema
         Product product;
+        // Import the rental schema
+        Rental rental;
+        // Import the category schema
+        Category category;
 
         // Create the storage
-        auto storage = make_storage(database_name + ".sqlite", user.schema(), product.schema());
-        // Sync the schemas
+        auto storage = make_storage(database_name + ".sqlite", user.schema(), product.schema(),
+                                    rental.schema(), category.schema());
+        // Sync the schemas and create the database if it doesn't exist already
         storage.sync_schema();
         return storage;
     }

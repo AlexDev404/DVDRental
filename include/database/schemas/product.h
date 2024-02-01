@@ -10,11 +10,11 @@ public:
     Product(string name, string desc, bool rnt_status, float rating);
     auto schema();
     // Properties
-    int _id; // Database ID 
-    string name; // Product name 
-    string desc; // Product description
+    int _id;         // Database ID
+    string name;     // Product name
+    string desc;     // Product description
     bool rnt_status; // Rental status
-    float rating; // Rating
+    float rating;    // Rating
 };
 
 // Default constructor
