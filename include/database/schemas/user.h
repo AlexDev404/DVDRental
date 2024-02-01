@@ -10,12 +10,12 @@ public:
     User(string firstName, string lastName, string sk, string addr, bool role);
     auto schema();
     // Properties
-    int _id;
-    string firstName;
-    string lastName;
-    string sk;
-    string addr;
-    bool role;
+    int _id; // Database ID 
+    string firstName; // First name 
+    string lastName; // Last name
+    string sk; // Security key
+    string addr; // Customer/user address 
+    bool role; // User role
 };
 
 // Default constructor
