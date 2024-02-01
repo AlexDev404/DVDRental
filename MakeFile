@@ -1,1 +1,16 @@
-g++ -Iinclude\ -Iinclude\sqlite\ -Iinclude\sqlite-orm\ main.cpp
+# Variables
+CXX = g++
+INCLUDE_DIRS = -Iinclude -Iinclude/sqlite -Iinclude/sqlite-orm
+SRC = main.cpp
+OUT = main.exe
+
+# Default rule
+all: $(OUT)
+
+# Rule for building the main program
+$(OUT): $(SRC)
+	$(CXX) $(INCLUDE_DIRS) $< -o $@
+
+# Rule for cleaning the workspace
+clean:
+	rm -f $(OUT)
