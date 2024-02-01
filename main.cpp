@@ -15,15 +15,21 @@ int main()
 {
     auto database = initDB();
     cout << "Inserting new user..." << endl;
-    User user("John", "Doe", 664416000, 3);
+    User user("John", "Doe", "???", "2 Starapple Street", false);
     auto insertedID = database.insert(user);
     cout << "insertedId = " << insertedID << endl;
     user._id = insertedID;
 
     cout << "Inserting new user..." << endl;
-    User secondUser("Alice", "Inwonder", 831168000, 2);
+    User secondUser("Alice", "Inwonder", "???", "5 Orange Street", false);
     insertedID = database.insert(secondUser);
     cout << "insertedId = " << insertedID << endl;
     secondUser._id = insertedID;
+
+    cout << "Inserting new product..." << endl;
+    Product product("Alice", "Inwonder", false, 2.44);
+    insertedID = database.insert(product);
+    cout << "insertedId = " << insertedID << endl;
+    product._id = insertedID;
     return 0;
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include <sqlite-orm/sqlite_orm.h>
 #include <database/schemas/user.h>
+#include <database/schemas/product.h>
 using namespace sqlite_orm;
 
 // https://github.com/fnc12/sqlite_orm
@@ -17,9 +18,14 @@ auto database::newDatabase(string database_name)
     // Create a database
     try
     {
+        // Schema import
         // Import the user schema
         User user;
-        auto storage = make_storage(database_name + ".sqlite", user.schema());
+        // Import the product schema
+        Product product;
+
+        // Create the storage
+        auto storage = make_storage(database_name + ".sqlite", user.schema(), product.schema());
         // Sync the schemas
         storage.sync_schema();
         return storage;

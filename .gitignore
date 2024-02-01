@@ -33,3 +33,4 @@
 
 # Visual Studio Code files
 .vscode/
+database.sqlite
