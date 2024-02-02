@@ -27,7 +27,7 @@ void main_()
     secondUser._id = insertedID;
 
     Trace::WriteLine("Inserting new product...");
-    Product product("Alice", "Inwonder", false, 2.44);
+    Product product("Alice", "Inwonder", false, true, 2.44);
     insertedID = database.insert(product);
     Trace::WriteLine("insertedId = " + insertedID.ToString());
     product._id = insertedID;
