@@ -80,6 +80,7 @@ namespace WinForms {
 #pragma endregion
 
 	private: System::Void testControl_Click(System::Object^ sender, System::EventArgs^ e) {
+		// Run the "main" function
 		main_();
 	}
 	};

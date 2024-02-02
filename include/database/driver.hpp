@@ -39,7 +39,6 @@ auto database::newDatabase(string database_name)
     }
     catch (std::exception &e)
     {
-        std::cerr << e.what() << std::endl;
         throw e.what();
         // return nullptr;
     }

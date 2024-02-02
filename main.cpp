@@ -1,36 +1,37 @@
 #include "pch.h"
-#include <iostream>
 #include <database/driver.hpp>
-using namespace std;
+using namespace System::Diagnostics;
 
 auto initDB()
 {
     // Create the database
     database db;
     const auto database = db.newDatabase("database");
-    cout << "Database created." << endl;
+    Trace::WriteLine("Database created.");
     return database;
 }
 
 void main_()
 {
+
+
     auto database = initDB();
-    cout << "Inserting new user..." << endl;
+    Trace::WriteLine("Inserting new user...");
     User user("John", "Doe", "???", "2 Starapple Street", false);
     auto insertedID = database.insert(user);
-    cout << "insertedId = " << insertedID << endl;
+    Trace::WriteLine("insertedId = " + insertedID.ToString());
     user._id = insertedID;
 
-    cout << "Inserting new user..." << endl;
+    Trace::WriteLine("Inserting new user...");
     User secondUser("Alice", "Inwonder", "???", "5 Orange Street", false);
     insertedID = database.insert(secondUser);
-    cout << "insertedId = " << insertedID << endl;
+    Trace::WriteLine("insertedId = " + insertedID.ToString());
     secondUser._id = insertedID;
 
-    cout << "Inserting new product..." << endl;
+    Trace::WriteLine("Inserting new product...");
     Product product("Alice", "Inwonder", false, 2.44);
     insertedID = database.insert(product);
-    cout << "insertedId = " << insertedID << endl;
+    Trace::WriteLine("insertedId = " + insertedID.ToString());
     product._id = insertedID;
     // return 0;
 }
