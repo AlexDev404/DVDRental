@@ -7,13 +7,14 @@ class Product
 {
 public:
     Product();
-    Product(string name, string desc, bool rnt_status, float rating);
+    Product(string name, string desc, bool rnt_status, bool type, float rating);
     auto schema();
     // Properties
     int _id;         // Database ID
     string name;     // Product name
     string desc;     // Product description
     bool rnt_status; // Rental status
+    bool type;       // Product type (DVD or videogame)
     float rating;    // Rating
 };
 
@@ -24,11 +25,12 @@ Product::Product()
 }
 
 // New Product
-Product::Product(string name, string desc, bool rnt_status, float rating)
+Product::Product(string name, string desc, bool rnt_status, bool type, float rating)
 {
     this->name = name;
     this->desc = desc;
     this->rnt_status = rnt_status;
+    this->type = type;
     this->rating = rating;
 }
 
@@ -40,6 +42,7 @@ auto Product::schema()
                                make_column("name", &Product::name),
                                make_column("description", &Product::desc),
                                make_column("rental_status", &Product::rnt_status),
+                               make_column("type", &Product::type),
                                make_column("rating", &Product::rating)
 
     );

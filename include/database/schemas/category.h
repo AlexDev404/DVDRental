@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
 #include <sqlite-orm/sqlite_orm.h>
-using std::string, sqlite_orm::make_table, sqlite_orm::make_column, sqlite_orm::unique, sqlite_orm::primary_key;
+using std::string, sqlite_orm::make_table, sqlite_orm::make_column, sqlite_orm::foreign_key, sqlite_orm::unique, sqlite_orm::primary_key;
 
+#include <database/schemas/product.h> // Import the product
 class Category
 {
 public:
@@ -13,7 +14,7 @@ public:
     int _id;       // Database ID
     string name;   // Category name
     string desc;   // Category description
-    int products; // Products in category
+    int products; // Products in category (FK -- foreign key)
 };
 
 // Default constructor
@@ -37,7 +38,7 @@ auto Category::schema()
                                 make_column("_id", &Category::_id, unique(), primary_key().autoincrement()),
                                 make_column("name", &Category::name),
                                 make_column("description", &Category::desc),
-                                make_column("products", &Category::products)
-
+                                make_column("products", &Category::products),
+                                foreign_key(&Category::products).references(&Product::_id) // References the product ID
     );
 }

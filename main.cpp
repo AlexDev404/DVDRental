@@ -13,8 +13,6 @@ auto initDB()
 
 void main_()
 {
-
-
     auto database = initDB();
     Trace::WriteLine("Inserting new user...");
     User user("John", "Doe", "???", "2 Starapple Street", false);

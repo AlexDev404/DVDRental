@@ -1,8 +1,10 @@
 #pragma once
 #include <string>
 #include <sqlite-orm/sqlite_orm.h>
-using std::string, sqlite_orm::make_table, sqlite_orm::make_column, sqlite_orm::unique, sqlite_orm::primary_key;
+using std::string, sqlite_orm::make_table, sqlite_orm::make_column, sqlite_orm::foreign_key, sqlite_orm::unique, sqlite_orm::primary_key;
 
+#include <database/schemas/user.h> // Import the user
+#include <database/schemas/product.h> // Import the product
 class Rental
 {
 public:
@@ -11,7 +13,7 @@ public:
     auto schema();
     // Properties
     int _id;         // Database ID
-    int product;    // Rental product
+    int product;    // Rental product (FK -- foreign key)
     int returned_at; // Return date
     int rented_at;   // Rental date
     int is_due_at;   // Due date
@@ -46,7 +48,9 @@ auto Rental::schema()
                               make_column("rented_at", &Rental::rented_at),
                               make_column("is_due_at", &Rental::is_due_at),
                               make_column("charge", &Rental::charge),
-                              make_column("user", &Rental::user)
+                              make_column("user", &Rental::user),
+                              foreign_key(&Rental::user).references(&User::_id), // References the user ID
+                              foreign_key(&Rental::product).references(&Product::_id) // References the user ID
 
     );
 }

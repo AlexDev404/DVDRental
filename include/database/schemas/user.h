@@ -15,7 +15,7 @@ public:
     string lastName;  // Last name
     string sk;        // Security key
     string addr;      // Customer/user address
-    bool role;        // User role
+    bool role;        // User role (admin or customer)
 };
 
 // Default constructor
