@@ -1,3 +1,4 @@
+#include "pch.h"
 #include <iostream>
 #include <database/driver.hpp>
 using namespace std;
@@ -11,7 +12,7 @@ auto initDB()
     return database;
 }
 
-int main()
+void main_()
 {
     auto database = initDB();
     cout << "Inserting new user..." << endl;
@@ -31,5 +32,5 @@ int main()
     insertedID = database.insert(product);
     cout << "insertedId = " << insertedID << endl;
     product._id = insertedID;
-    return 0;
+    // return 0;
 }
