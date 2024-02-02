@@ -10,7 +10,13 @@ Specifically, you need the...
 - .NET Framework 4 - 4.6 development tools
 - .NET SDK (out of support)
 
-Then, you can just open up the solution and then build and run.
+Afterwards, you'd open up the root directory of the project and run:
+
+```shell
+> scripts\build_sqlite3
+```
+
+Then finally, you can just open up the solution and then build and run.
 
 
 # Explanation of code
