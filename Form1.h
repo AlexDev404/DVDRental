@@ -62,7 +62,7 @@ namespace WinForms {
 			this->testControl->Name = L"testControl";
 			this->testControl->Size = System::Drawing::Size(136, 23);
 			this->testControl->TabIndex = 0;
-			this->testControl->Text = L"Insert new user";
+			this->testControl->Text = L"Initialize database";
 			this->testControl->UseVisualStyleBackColor = true;
 			this->testControl->Click += gcnew System::EventHandler(this, &Form1::testControl_Click);
 			// 
