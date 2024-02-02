@@ -1,22 +1,27 @@
+#include "pch.h"
 #include <iostream>
 #include <database/driver.hpp>
-using namespace std;
+using std::cout;
+using namespace Windows::Storage;
+
 
 auto initDB()
 {
     // Create the database
-    database db;
-    const auto database = db.newDatabase("database");
-    cout << "Database created." << endl;
+    database001 db;
+    const auto database = db.newDatabase("database.sqlite"); //database.sqlite
+    // cout << "Database created." << endl;
     return database;
 }
 
-int main()
+void uwp_main()
 {
+
     auto database = initDB();
     cout << "Inserting new user..." << endl;
     User user("John", "Doe", "???", "2 Starapple Street", false);
     auto insertedID = database.insert(user);
+/*
     cout << "insertedId = " << insertedID << endl;
     user._id = insertedID;
 
@@ -27,9 +32,9 @@ int main()
     secondUser._id = insertedID;
 
     cout << "Inserting new product..." << endl;
-    Product product("Alice", "Inwonder", false, 2.44);
+    Product product("Alice", "Inwonder", false, 2.4);
     insertedID = database.insert(product);
     cout << "insertedId = " << insertedID << endl;
     product._id = insertedID;
-    return 0;
+    */
 }

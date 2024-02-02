@@ -30,6 +30,7 @@ App::App()
 {
     InitializeComponent();
     Suspending += ref new SuspendingEventHandler(this, &App::OnSuspending);
+    uwp_main();
 }
 
 /// <summary>

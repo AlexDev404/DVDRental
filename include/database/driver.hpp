@@ -8,14 +8,14 @@ using namespace sqlite_orm;
 
 // https://github.com/fnc12/sqlite_orm
 
-class database
+class database001
 {
 public:
     // Return back the database
     auto newDatabase(string database_name);
 };
 
-auto database::newDatabase(string database_name)
+auto database001::newDatabase(string database_name)
 {
     // Create a database
     try
@@ -31,7 +31,7 @@ auto database::newDatabase(string database_name)
         Category category;
 
         // Create the storage
-        auto storage = make_storage(database_name + ".sqlite", user.schema(), product.schema(),
+        auto storage = make_storage(database_name, user.schema(), product.schema(),
                                     rental.schema(), category.schema());
         // Sync the schemas and create the database if it doesn't exist already
         storage.sync_schema();
