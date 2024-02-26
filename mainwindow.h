@@ -1,6 +1,5 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -23,4 +22,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 };
+// Ui::MainWindow ui_;
+// QWidget cWidget;
+
 #endif // MAINWINDOW_H

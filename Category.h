@@ -6,6 +6,7 @@ using std::string;
 
 class Category
 {
+    friend class database;  // Lol
 public:
     // Constructors!
     Category(database& db);

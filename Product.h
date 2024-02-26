@@ -6,6 +6,7 @@ using std::string;
 
 class Product
 {
+    friend class database;  // Lol
 public:
     // Constructors!
     Product(database& db);

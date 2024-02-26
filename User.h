@@ -6,6 +6,7 @@ using std::string;
 
 class User
 {
+    friend class database;  // Lol
 public:
     // Constructors!
     User(database &db);

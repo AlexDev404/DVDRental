@@ -10,6 +10,7 @@ using std::string;
 
 class Rental
 {
+    friend class database;  // Lol
 public:
     Rental(database& db);
     Rental(database& db, User* user, Product* product, long int rented_at, long int is_due_at, float charge);

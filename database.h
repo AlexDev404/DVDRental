@@ -4,6 +4,9 @@
 #include <QtSql/qsqlerror.h>
 #include <QDebug>
 #include <vector>
+#include <optional>
+#include <QString>
+#include <qmessagebox.h>
 #include "./User.h"
 #include "./Product.h"
 #include "./Category.h"
@@ -12,36 +15,33 @@
 class database
 {
 public:
-    database();
-    database(string database_name);
+    database(); // Does nothing
+    // ~database(); // Goodbye, database. We never missed you!
+    database(string database_name); // Connect to the database
     // (if-no-exists): Create and return back a new database instance
     database newDatabase(string database_name);
     QSqlDatabase getInstance() const; // Get the database instance please
 
     // Utilities and the such
     // User
-    /*void newUser(User user);          // Add a new user
-    void deleteUser(int id);          // Delete a user by ID
-    User queryUser(int id);           // Get a user by ID
-    std::vector<User> getAllUsers();  // Get all users
+    std::optional<User> queryUser(int id);  // Get a user by ID
+    std::vector<User> getAllUsers();        // Get all users
 
     // Product
-    void newProduct(Product product);
-    void deleteProduct(int id);
-    Product queryProduct(int id);
-    std::vector<Product> getAllProducts();
+    std::optional<Product> queryProduct(int id);  // Get a product by ID
+    std::vector<Product> getAllProducts();        // Get all products
 
     // Category
-    void newCategory(Category category);
-    void deleteCategory(int id);
-    Category queryCategory(int id);
-    std::vector<Product> getAllCategories();
+    std::optional<Category> queryCategory(int id);
+    std::vector<Category> getAllCategories();
 
     // Rental
-    void newRental(Rental rental);
-    void deleteRental(int id);
-    Rental queryRental(int id);
-    std::vector<Rental> getAllRentals();*/
+    std::optional<Rental> queryRental(int id);
+    std::vector<Rental> getAllRentals();
 private:
     QSqlDatabase please;
+    QString dbHost = "127.0.0.1";
+    QString dbUsername = "root";
+    QString dbPassword = "root";
+    QString dbName = "DVDRental";
 };
