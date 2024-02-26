@@ -25,6 +25,7 @@ database::database(string database_name) {
         if (please.open())
         {
             qDebug("Successfully connected to database!");
+            QMessageBox::information(nullptr, "Database Information", "You are hopefully connected.");
 
         }
         else

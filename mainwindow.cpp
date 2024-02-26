@@ -1,15 +1,17 @@
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
 #include "database.h"
-database db("DVDRental"); // Get connected
 //Ui::MainWindow ui_;
 //QWidget cWidget;
+database db; // Empty-but assigned later!
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     // ui_ = *ui;
+    database ref_db("DVDRental"); // Get connected
+    db = ref_db;
     ui->setupUi(this);
 }
 
