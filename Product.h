@@ -34,7 +34,7 @@ public:
     void delete_(int id);  // Delete product by ID
     void write();  // Write or overwrite object to database
 private:
-    int _id;         // Database ID
+    int _id;          // Database ID
     int _c_id;        // Category ID
     string _name;     // Product name
     string _desc;     // Product description
