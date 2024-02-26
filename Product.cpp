@@ -16,7 +16,7 @@ Product::Product(database& db) : db(db) {
 	}
 }
 
-Product::Product(database& db, string name, string desc, bool rnt_status, bool type, float rating): db(db) {
+Product::Product(database& db, string name, string desc, bool rnt_status, float price, bool type, float rating): db(db) {
 	QSqlDatabase database = db.getInstance();
 	QSqlQuery query(database);
 
@@ -32,6 +32,7 @@ Product::Product(database& db, string name, string desc, bool rnt_status, bool t
 	this->_desc = desc;
 	this->_rnt_status = rnt_status;
 	this->_type = type;
+	this->_price = price;
 	this->_rating = rating;
 }
 
@@ -65,6 +66,11 @@ bool Product::rnt_status() const {
 // Getter for _type
 bool Product::type() const {
 	return this->_type;
+}
+
+// Getter for _price
+float Product::price() const {
+	return this->_price;
 }
 
 // Getter for _rating
@@ -103,6 +109,11 @@ void Product::setType(bool type) {
 	this->_type = type;
 }
 
+// Setter for _price
+void Product::setPrice(float price) {
+	this->_price = price;
+}
+
 // Setter for _rating
 void Product::setRating(float rating) {
 	this->_rating = rating;
@@ -133,11 +144,11 @@ void Product::write() {
 	query.bindValue(":id", this->_id);
 	if (query.exec() && query.next() && query.value(0).toInt() > 0) {
 		// The row exists, update it
-		query.prepare("UPDATE products SET c_id = :cid, name = :name, desc = :desc, rnt_status = :rnt_status, type = :type, rating = :rating WHERE id = :id");
+		query.prepare("UPDATE products SET c_id = :cid, name = :name, desc = :desc, rnt_status = :rnt_status, type = :type, price = :price, rating = :rating WHERE id = :id");
 	}
 	else {
 		// The row doesn't exist, insert a new one
-		query.prepare("INSERT INTO products (id, c_id, name, desc, rnt_status, type, rating) VALUES (:id, :cid, :name, :desc, :rnt_status, :type, :rating)");
+		query.prepare("INSERT INTO products (id, c_id, name, desc, rnt_status, type, price, rating) VALUES (:id, :cid, :name, :desc, :rnt_status, :type, :price, :rating)");
 	}
 
 	// Bind the values and execute the next upcoming/prepared query
@@ -147,6 +158,7 @@ void Product::write() {
 	query.bindValue(":desc", QString::fromStdString(this->_desc));
 	query.bindValue(":rnt_status", this->_rnt_status);
 	query.bindValue(":type", this->_type);
+	query.bindValue(":price", this->_price);
 	query.bindValue(":rating", this->_rating);
 	if (!query.exec()) {
 		qDebug() << "Error writing product to database: " << query.lastError();
