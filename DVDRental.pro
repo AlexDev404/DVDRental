@@ -26,8 +26,11 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
+    category.ui \
     mainwindow.ui \
-    product.ui
+    product.ui \
+    rental.ui \
+    user.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
