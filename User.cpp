@@ -16,7 +16,7 @@ User::User(database &db): db(db) {
 	}
 }
 
-User::User(database &db, string firstName, string lastName, string sk, string addr, bool role): db(db) {
+User::User(database &db, string userName, string firstName, string lastName, string sk, string addr, bool role): db(db) {
 	QSqlDatabase database = db.getInstance();
 	QSqlQuery query(database);
 
@@ -28,6 +28,7 @@ User::User(database &db, string firstName, string lastName, string sk, string ad
 	else {
 		qDebug() << "Construct_User: Error getting max ID: " << query.lastError();
 	}
+	this->_userName = userName;
 	this->_firstName = firstName;
 	this->_lastName = lastName;
 	this->_sk = sk;
@@ -41,6 +42,11 @@ User::User(database &db, string firstName, string lastName, string sk, string ad
 // Getter for _id
 int User::id() const {
 	return this->_id;
+}
+
+// Getter for _userName
+string User::userName() const {
+	return this->_userName;
 }
 
 // Getter for _firstName
@@ -72,6 +78,11 @@ bool User::role() const {
 // Setter for _id
 void User::setId(int _id) {
 	this->_id = _id;
+}
+
+// Setter for _userName
+void User::setUserName(string userName) {
+	this->_userName = userName;
 }
 
 // Setter for _firstName
@@ -124,15 +135,16 @@ void User::write() {
 	query.bindValue(":id", this->_id);
 	if (query.exec() && query.next() && query.value(0).toInt() > 0) {
 		// The row exists, update it
-		query.prepare("UPDATE users SET firstName = :firstName, lastName = :lastName, sk = :sk, addr = :addr, role = :role WHERE id = :id");
+		query.prepare("UPDATE users SET userName = :userName, firstName = :firstName, lastName = :lastName, sk = :sk, addr = :addr, role = :role WHERE id = :id");
 	}
 	else {
 		// The row doesn't exist, insert a new one
-		query.prepare("INSERT INTO users (id, firstName, lastName, sk, addr, role) VALUES (:id, :firstName, :lastName, :sk, :addr, :role)");
+		query.prepare("INSERT INTO users (id, userName, firstName, lastName, sk, addr, role) VALUES (:id, :firstName, :lastName, :sk, :addr, :role)");
 	}
 
 	// Bind the values and execute the next upcoming/prepared query
 	query.bindValue(":id", this->_id);
+	query.bindValue(":userName", QString::fromStdString(this->_userName));
 	query.bindValue(":firstName", QString::fromStdString(this->_firstName));
 	query.bindValue(":lastName", QString::fromStdString(this->_lastName));
 	query.bindValue(":sk", QString::fromStdString(this->_sk));
