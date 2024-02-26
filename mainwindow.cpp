@@ -15,6 +15,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_sign_in_clicked()
 {
-
+    // ui->password
+    // ui->username
 }
 

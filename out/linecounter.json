@@ -1,0 +1,729 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "e:\\Data\\PROGRAMMING\\Qt\\DVDRental",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2024-02-25 22:23:05",
+            "filesum": 94,
+            "codesum": 5243,
+            "commentsum": 355,
+            "blanksum": 276,
+            "statistics": {
+                ".props": {
+                    "code": 240,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".filters": {
+                    "code": 128,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".vcxproj": {
+                    "code": 393,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".pro": {
+                    "code": 31,
+                    "comment": 0,
+                    "blank": 7
+                },
+                ".log": {
+                    "code": 9,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".txt": {
+                    "code": 51,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".cbt": {
+                    "code": 4,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".idx": {
+                    "code": 2,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".stash": {
+                    "code": 34,
+                    "comment": 0,
+                    "blank": 2
+                },
+                ".h": {
+                    "code": 277,
+                    "comment": 141,
+                    "blank": 50
+                },
+                ".cpp": {
+                    "code": 507,
+                    "comment": 122,
+                    "blank": 120
+                },
+                ".md": {
+                    "code": 2,
+                    "comment": 0,
+                    "blank": 1
+                },
+                ".ui": {
+                    "code": 127,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".user": {
+                    "code": 442,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".sln": {
+                    "code": 25,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".qtvscr": {
+                    "code": 2057,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".natvis": {
+                    "code": 682,
+                    "comment": 1,
+                    "blank": 53
+                },
+                ".lastbuildstate": {
+                    "code": 2,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".tlog": {
+                    "code": 6,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".recipe": {
+                    "code": 11,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".db-wal": {
+                    "code": 0,
+                    "comment": 0,
+                    "blank": 0
+                },
+                "": {
+                    "code": 213,
+                    "comment": 91,
+                    "blank": 43
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 43,
+                    "code": 213,
+                    "comment": 91,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 0,
+                    "filename": ".qmake.stash"
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\.suo",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\Browse.VC.db",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\Browse.VC.db",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\Browse.VC.db-shm",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": ".vs\\DVDRental\\v16\\Browse.VC.db-wal"
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\Browse.VC.opendb",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\ipch\\AutoPCH\\1e68dca4a71c748f\\CATEGORY.ipch",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\ipch\\AutoPCH\\4f2e74ee5fc04b60\\USER.ipch",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\ipch\\AutoPCH\\aecb9b415eb607ac\\PRODUCT.ipch",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\ipch\\AutoPCH\\ceb4dd3723a2adda\\DATABASE.ipch",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\ipch\\AutoPCH\\ed5236b3bd81b5d2\\MAINWINDOW.ipch",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\ipch\\AutoPCH\\ed5236b3bd81b5d2\\MAINWINDOW.ipch",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": ".vs\\DVDRental\\v16\\ipch\\AutoPCH\\f4a9658383ba97f5\\RENTAL.ipch",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 18,
+                    "code": 72,
+                    "comment": 18,
+                    "filename": "Category.cpp"
+                },
+                {
+                    "blank": 4,
+                    "code": 23,
+                    "comment": 19,
+                    "filename": "Category.h"
+                },
+                {
+                    "blank": 10,
+                    "code": 37,
+                    "comment": 11,
+                    "filename": "database.cpp"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 26,
+                    "filename": "database.h"
+                },
+                {
+                    "filename": "debug\\Category.obj",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\database.obj",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.exe",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "debug\\DVDRental.exe.recipe"
+                },
+                {
+                    "filename": "debug\\DVDRental.ilk",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "debug\\DVDRental.log"
+                },
+                {
+                    "filename": "debug\\DVDRental.pdb",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\CL.command.1.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\CL.read.1.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\CL.write.1.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "debug\\DVDRental.tlog\\CustomBuild.command.1.tlog"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "debug\\DVDRental.tlog\\CustomBuild.read.1.tlog"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "debug\\DVDRental.tlog\\CustomBuild.write.1.tlog"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "debug\\DVDRental.tlog\\DVDRental.lastbuildstate"
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\DVDRental.write.1u.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\link.command.1.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\link.read.1.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\link.write.1.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\moc.read.1u.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\moc.write.1u.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\uic.read.1u.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\DVDRental.tlog\\uic.write.1u.tlog",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "debug\\DVDRental.vcxproj.FileListAbsolute.txt"
+                },
+                {
+                    "filename": "debug\\main.obj",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\mainwindow.obj",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 20,
+                    "code": 115,
+                    "comment": 28,
+                    "filename": "debug\\moc_mainwindow.cpp"
+                },
+                {
+                    "filename": "debug\\moc_mainwindow.obj",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "debug\\moc_predefs.h"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "debug\\moc_predefs.h.cbt"
+                },
+                {
+                    "filename": "debug\\Product.obj",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 53,
+                    "code": 682,
+                    "comment": 1,
+                    "filename": "debug\\qt.natvis"
+                },
+                {
+                    "filename": "debug\\qt_work.log",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\Rental.obj",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\User.obj",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "debug\\vc142.pdb",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 7,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "DVDRental.pro"
+                },
+                {
+                    "blank": 0,
+                    "code": 432,
+                    "comment": 0,
+                    "filename": "DVDRental.pro.user"
+                },
+                {
+                    "blank": 0,
+                    "code": 2057,
+                    "comment": 0,
+                    "filename": "DVDRental.qtvscr"
+                },
+                {
+                    "blank": 0,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "DVDRental.sln"
+                },
+                {
+                    "blank": 0,
+                    "code": 220,
+                    "comment": 0,
+                    "filename": "DVDRental.vcxproj"
+                },
+                {
+                    "blank": 0,
+                    "code": 100,
+                    "comment": 0,
+                    "filename": "DVDRental.vcxproj.filters"
+                },
+                {
+                    "blank": 0,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "DVDRental.vcxproj.user"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "main.cpp"
+                },
+                {
+                    "blank": 4,
+                    "code": 15,
+                    "comment": 2,
+                    "filename": "mainwindow.cpp"
+                },
+                {
+                    "blank": 6,
+                    "code": 20,
+                    "comment": 1,
+                    "filename": "mainwindow.h"
+                },
+                {
+                    "blank": 0,
+                    "code": 127,
+                    "comment": 0,
+                    "filename": "mainwindow.ui"
+                },
+                {
+                    "blank": 25,
+                    "code": 104,
+                    "comment": 25,
+                    "filename": "Product.cpp"
+                },
+                {
+                    "blank": 5,
+                    "code": 35,
+                    "comment": 31,
+                    "filename": "Product.h"
+                },
+                {
+                    "blank": 1,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "release\\moc_predefs.h.cbt"
+                },
+                {
+                    "blank": 21,
+                    "code": 79,
+                    "comment": 19,
+                    "filename": "Rental.cpp"
+                },
+                {
+                    "blank": 3,
+                    "code": 36,
+                    "comment": 26,
+                    "filename": "Rental.h"
+                },
+                {
+                    "blank": 26,
+                    "code": 99,
+                    "comment": 11,
+                    "filename": "ui_mainwindow.h"
+                },
+                {
+                    "blank": 20,
+                    "code": 76,
+                    "comment": 19,
+                    "filename": "User.cpp"
+                },
+                {
+                    "blank": 4,
+                    "code": 31,
+                    "comment": 27,
+                    "filename": "User.h"
+                },
+                {
+                    "blank": 0,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\qtvars_x64_Debug.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\temp\\.qmake.stash"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\temp\\EDFB5EAA-DF83-370D-A542-66ABBFDCBEC0.DVDRental.designtime.idx"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\temp\\moc_predefs.h.cbt"
+                },
+                {
+                    "blank": 0,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\temp\\props.txt"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\temp\\qtvars.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\temp\\qtvars.pro"
+                },
+                {
+                    "blank": 0,
+                    "code": 84,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\temp\\qtvars.vcxproj"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\temp\\qtvars.vcxproj.filters"
+                },
+                {
+                    "blank": 0,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "x64\\Debug\\qmake\\temp\\qtvars_x64_Debug.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\qtvars_x64_Release.props"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\temp\\.qmake.stash"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\temp\\EDFB5EAA-DF83-370D-A542-66ABBFDCBEC0.DVDRental.designtime.idx"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\temp\\moc_predefs.h.cbt"
+                },
+                {
+                    "blank": 0,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\temp\\props.txt"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\temp\\qtvars.log"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\temp\\qtvars.pro"
+                },
+                {
+                    "blank": 0,
+                    "code": 89,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\temp\\qtvars.vcxproj"
+                },
+                {
+                    "blank": 0,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\temp\\qtvars.vcxproj.filters"
+                },
+                {
+                    "blank": 0,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "x64\\Release\\qmake\\temp\\qtvars_x64_Release.props"
+                }
+            ]
+        }
+    ]
+}

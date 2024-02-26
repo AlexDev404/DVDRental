@@ -16,10 +16,11 @@ public:
     database(string database_name);
     // (if-no-exists): Create and return back a new database instance
     database newDatabase(string database_name);
+    QSqlDatabase getInstance() const; // Get the database instance please
 
     // Utilities and the such
     // User
-/*    void newUser(User user);          // Add a new user
+    /*void newUser(User user);          // Add a new user
     void deleteUser(int id);          // Delete a user by ID
     User queryUser(int id);           // Get a user by ID
     std::vector<User> getAllUsers();  // Get all users

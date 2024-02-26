@@ -1,14 +1,15 @@
 #pragma once
+class database; // Forward declaration because C++ sucks. 
+
 #include <string>
-#include <QtSql/qtsqlglobal.h>
 using std::string;
 
 class Category
 {
 public:
     // Constructors!
-    Category();
-    Category(string name, string desc);
+    Category(database& db);
+    Category(database& db, string name, string desc);
     // Properties
     // Getters
     int id() const;       // Getter for _id
@@ -19,8 +20,14 @@ public:
     void setId(int _id);        // Setter for _id
     void setName(string name);  // Setter for name
     void setDesc(string desc);  // Setter for desc
+
+    // Utility
+    void delete_(int id);  // Delete category by ID
+    void write();  // Write or overwrite object to database
 private:
     int _id;      // Database ID
     string _name;  // Category name
     string _desc;  // Category description
+    // Database object
+    database& db;       // Database instance object reference
 };

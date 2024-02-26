@@ -48,3 +48,8 @@ database database::newDatabase(string database_name) {
 	database newDb(database_name);
 	return newDb;
 }
+
+QSqlDatabase database::getInstance() const {
+    // Return the QSqlDatabase object
+    return please; // Just hope this returns please
+}

@@ -1,7 +1,9 @@
 #pragma once
+#pragma once
+class database; // Forward declaration because C++ sucks. 
+
 #include <string>
 #include <vector>
-#include <QtSql/qtsqlglobal.h>
 #include "./Product.h"
 #include "./User.h"
 using std::string;
@@ -9,8 +11,8 @@ using std::string;
 class Rental
 {
 public:
-    Rental();
-    Rental(User* user, Product* product, long int rented_at, long int is_due_at, long int charge);
+    Rental(database& db);
+    Rental(database& db, User* user, Product* product, long int rented_at, long int is_due_at, float charge);
     // Properties
     // Getters
     int id() const;                // Getter for _id
@@ -28,6 +30,10 @@ public:
     void setDueDate(long int is_due_at);       // Setter for is_due_at
     void setCharge(float charge);              // Setter for charge
     void setUser(User* user);                  // Setter for user
+
+    // Utility
+    void delete_(int id);  // Delete rental by ID
+    void write();  // Write or overwrite object to database
 private:
     int _id;               // Database ID
     Product* _product;      // Rental product
@@ -36,4 +42,6 @@ private:
     long int _is_due_at;    // Deadline for return
     float _charge;          // Amount due
     User* _user;            // User that rented the product
+    // Database object
+    database& db;       // Database instance object reference
 };

@@ -1,14 +1,15 @@
 #pragma once
+class database; // Forward declaration because C++ sucks. 
+
 #include <string>
-#include <QtSql/qtsqlglobal.h>
 using std::string;
 
 class Product
 {
 public:
     // Constructors!
-    Product();
-    Product(string name, string desc, bool rnt_status, bool type, float rating);
+    Product(database& db);
+    Product(database& db, string name, string desc, bool rnt_status, bool type, float rating);
     // Properties
     // Getters
     int id() const;          // Getter for _id
@@ -27,7 +28,10 @@ public:
     void setStatus(bool rnt_status);  // Setter for rnt_status
     void setType(bool type);          // Setter for type
     void setRating(float rating);     // Setter for rating
-
+                                      
+    // Utility
+    void delete_(int id);  // Delete product by ID
+    void write();  // Write or overwrite object to database
 private:
     int _id;         // Database ID
     int _c_id;        // Category ID
@@ -36,4 +40,6 @@ private:
     bool _rnt_status; // Rental status
     bool _type;       // Product type (DVD or videogame)
     float _rating;    // Rating
+    // Database object
+    database& db;       // Database instance object reference
 };

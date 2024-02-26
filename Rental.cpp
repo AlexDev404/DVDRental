@@ -1,17 +1,40 @@
 #include "Rental.h"
+#include "database.h"
 
 // Constructors-Moved from header to here because compilation bugs out when in there
-Rental::Rental() { // Default constructor--does nothing
+Rental::Rental(database& db): db(db) {
+	QSqlDatabase database = db.getInstance();
+	QSqlQuery query(database);
+
+	query.prepare("SELECT MAX(id) FROM rentals");
+	if (query.exec() && query.next()) {
+		int maxId = query.value(0).toInt();
+		this->_id = maxId + 1;
+	}
+	else {
+		qDebug() << "Construct_Rental: Error getting max ID: " << query.lastError();
+	}
 }
 
-Rental::Rental(User* user, Product* product, long int rented_at, long int is_due_at, long int charge) {
-	this->_user = user;
-	this->_product = product;
-	this->_rented_at = rented_at;
-	this->_is_due_at = is_due_at;
-	this->_charge = charge;
-}
+Rental::Rental(database& db, User* user, Product* product, long int rented_at, long int is_due_at, float charge) : db(db) {
+	QSqlDatabase database = db.getInstance();
+	QSqlQuery query(database);
 
+	query.prepare("SELECT MAX(id) FROM rentals");
+	if (query.exec() && query.next()) {
+		int maxId = query.value(0).toInt();
+		this->_id = maxId + 1;
+	}
+	else {
+		qDebug() << "Construct_Rental: Error getting max ID: " << query.lastError();
+	} {
+		this->_user = user;
+		this->_product = product;
+		this->_rented_at = rented_at;
+		this->_is_due_at = is_due_at;
+		this->_charge = charge;
+	}
+}
 
 // Getters
 // Getter for _id
@@ -78,4 +101,48 @@ void Rental::setCharge(float charge) {
 // Setter for _user
 void Rental::setUser(User* user) {
 	this->_user = user;
+}
+
+// Utility
+// Delete a product by ID
+void Rental::delete_(int id) {
+	// SQL code to delete a products by ID
+	QSqlDatabase database = db.getInstance();
+	QSqlQuery query(database);
+
+	query.prepare("DELETE FROM rentals WHERE id = :id");
+	query.bindValue(":id", id);
+
+	if (!query.exec()) {
+		qDebug() << "Error deleting rental: " << query.lastError();
+	}
+}
+
+void Rental::write() {
+	QSqlDatabase database = db.getInstance();
+	QSqlQuery query(database);
+
+	// Check if the row exists
+	query.prepare("SELECT COUNT(*) FROM rentals WHERE id = :id");
+	query.bindValue(":id", this->_id);
+	if (query.exec() && query.next() && query.value(0).toInt() > 0) {
+		// The row exists, update it
+		query.prepare("UPDATE rentals SET product = :product_id, returned_at = :returned_at, rented_at = :rented_at, is_due_at = :is_due_at, charge = :charge, user_id = :user_id WHERE id = :id");
+	}
+	else {
+		// The row doesn't exist, insert a new one
+		query.prepare("INSERT INTO rentals (id, product, returned_at, rented_at, is_due_at, charge, user_id) VALUES (:id, :product_id, :returned_at, :rented_at, :is_due_at, :charge, :user_id)");
+	}
+
+	// Bind the values and execute the next upcoming/prepared query
+	query.bindValue(":id", this->_id);
+	query.bindValue(":product_id", this->_product->id());
+	query.bindValue(":returned_at", static_cast<int>(this->_returned_at));
+	query.bindValue(":rented_at", static_cast<int>(this->_rented_at));
+	query.bindValue(":is_due_at", static_cast<int>(this->_is_due_at));
+	query.bindValue(":charge", this->_charge);
+	query.bindValue(":user_id", this->_user->id());
+	if (!query.exec()) {
+		qDebug() << "Error writing rental to database: " << query.lastError();
+	}
 }

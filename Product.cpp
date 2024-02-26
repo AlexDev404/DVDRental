@@ -1,10 +1,33 @@
 #include "Product.h"
+#include "database.h"
 
 // Constructors-Moved from header to here because compilation bugs out when in there
-Product::Product() { // Default constructor--does nothing
+Product::Product(database& db) : db(db) {
+	QSqlDatabase database = db.getInstance();
+	QSqlQuery query(database);
+
+	query.prepare("SELECT MAX(id) FROM products");
+	if (query.exec() && query.next()) {
+		int maxId = query.value(0).toInt();
+		this->_id = maxId + 1;
+	}
+	else {
+		qDebug() << "Construct_Product: Error getting max ID: " << query.lastError();
+	}
 }
 
-Product::Product(string name, string desc, bool rnt_status, bool type, float rating) {
+Product::Product(database& db, string name, string desc, bool rnt_status, bool type, float rating): db(db) {
+	QSqlDatabase database = db.getInstance();
+	QSqlQuery query(database);
+
+	query.prepare("SELECT MAX(id) FROM products");
+	if (query.exec() && query.next()) {
+		int maxId = query.value(0).toInt();
+		this->_id = maxId + 1;
+	}
+	else {
+		qDebug() << "Construct_Product: Error getting max ID: " << query.lastError();
+	}
 	this->_name = name;
 	this->_desc = desc;
 	this->_rnt_status = rnt_status;
@@ -83,4 +106,49 @@ void Product::setType(bool type) {
 // Setter for _rating
 void Product::setRating(float rating) {
 	this->_rating = rating;
+}
+
+// Utility
+// Delete a product by ID
+void Product::delete_(int id) {
+	// SQL code to delete a products by ID
+	QSqlDatabase database = db.getInstance();
+	QSqlQuery query(database);
+
+	query.prepare("DELETE FROM products WHERE id = :id");
+	query.bindValue(":id", id);
+
+	if (!query.exec()) {
+		qDebug() << "Error deleting product: " << query.lastError();
+	}
+}
+
+// Write (something?)
+void Product::write() {
+	QSqlDatabase database = db.getInstance();
+	QSqlQuery query(database);
+
+	// Check if the row exists
+	query.prepare("SELECT COUNT(*) FROM products WHERE id = :id");
+	query.bindValue(":id", this->_id);
+	if (query.exec() && query.next() && query.value(0).toInt() > 0) {
+		// The row exists, update it
+		query.prepare("UPDATE products SET c_id = :cid, name = :name, desc = :desc, rnt_status = :rnt_status, type = :type, rating = :rating WHERE id = :id");
+	}
+	else {
+		// The row doesn't exist, insert a new one
+		query.prepare("INSERT INTO products (id, c_id, name, desc, rnt_status, type, rating) VALUES (:id, :cid, :name, :desc, :rnt_status, :type, :rating)");
+	}
+
+	// Bind the values and execute the next upcoming/prepared query
+	query.bindValue(":id", this->_id);
+	query.bindValue(":cid", this->_c_id);
+	query.bindValue(":name", QString::fromStdString(this->_name));
+	query.bindValue(":desc", QString::fromStdString(this->_desc));
+	query.bindValue(":rnt_status", this->_rnt_status);
+	query.bindValue(":type", this->_type);
+	query.bindValue(":rating", this->_rating);
+	if (!query.exec()) {
+		qDebug() << "Error writing product to database: " << query.lastError();
+	}
 }

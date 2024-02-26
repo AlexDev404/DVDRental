@@ -1,14 +1,15 @@
 #pragma once
+class database; // Forward declaration because C++ sucks. 
+
 #include <string>
-#include <QtSql/qtsqlglobal.h>
 using std::string;
 
 class User
 {
 public:
     // Constructors!
-    User();
-    User(string firstName, string lastName, string sk, string addr, bool role);
+    User(database &db);
+    User(database &db, string firstName, string lastName, string sk, string addr, bool role);
     // Properties
     // Getters
     int id() const;          // Getter for _id
@@ -27,12 +28,15 @@ public:
     void setRole(bool role);     // Setter for role
     
     // Utilities
-    void delete_(int id);               // Delete a user by ID
+    void delete_(int id);  // Delete a user by ID
+    void write();          // Write object to database
 private:
-    int _id;          // Database ID
+    int _id;           // Database ID
     string _firstName; // First name
     string _lastName;  // Last name
     string _sk;        // Security key (password, essentially)
     string _addr;      // Customer/user address
     bool _role;        // User role (admin or customer)
+    // Database object
+    database &db;       // Database instance object reference
 };

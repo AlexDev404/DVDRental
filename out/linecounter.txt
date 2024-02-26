@@ -1,0 +1,132 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2024-02-25 22:23:05
+count workspace : e:\Data\PROGRAMMING\Qt\DVDRental
+total files : 94
+total code lines : 5243
+total comment lines : 355
+total blank lines : 276
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |         .props|            240|              0|              0|    4.6|
+   |       .filters|            128|              0|              0|    2.4|
+   |       .vcxproj|            393|              0|              0|    7.5|
+   |           .pro|             31|              0|              7|   0.59|
+   |           .log|              9|              0|              0|   0.17|
+   |           .txt|             51|              0|              0|   0.97|
+   |           .cbt|              4|              0|              0|  0.076|
+   |           .idx|              2|              0|              0|  0.038|
+   |         .stash|             34|              0|              2|   0.65|
+   |             .h|            277|            141|             50|    5.3|
+   |           .cpp|            507|            122|            120|    9.7|
+   |            .md|              2|              0|              1|  0.038|
+   |            .ui|            127|              0|              0|    2.4|
+   |          .user|            442|              0|              0|    8.4|
+   |           .sln|             25|              0|              0|   0.48|
+   |        .qtvscr|           2057|              0|              0|     39|
+   |        .natvis|            682|              1|             53|     13|
+   |.lastbuildstate|              2|              0|              0|  0.038|
+   |          .tlog|              6|              0|              0|   0.11|
+   |        .recipe|             11|              0|              0|   0.21|
+   |        .db-wal|              0|              0|              0|    0.0|
+   |               |            213|             91|             43|    4.1|
+   -------------------------------------------------------------------------
+.gitignore, code is 213, comment is 91, blank is 43.
+.qmake.stash, code is 20, comment is 0, blank is 2.
+.vs\DVDRental\v16\.suo, it is a binary file.
+.vs\DVDRental\v16\Browse.VC.db, it is a binary file.
+.vs\DVDRental\v16\Browse.VC.db, it is a binary file.
+.vs\DVDRental\v16\Browse.VC.db-shm, it is a binary file.
+.vs\DVDRental\v16\Browse.VC.db-wal, code is 0, comment is 0, blank is 0.
+.vs\DVDRental\v16\Browse.VC.opendb, it is a binary file.
+.vs\DVDRental\v16\ipch\AutoPCH\1e68dca4a71c748f\CATEGORY.ipch, it is a binary file.
+.vs\DVDRental\v16\ipch\AutoPCH\4f2e74ee5fc04b60\USER.ipch, it is a binary file.
+.vs\DVDRental\v16\ipch\AutoPCH\aecb9b415eb607ac\PRODUCT.ipch, it is a binary file.
+.vs\DVDRental\v16\ipch\AutoPCH\ceb4dd3723a2adda\DATABASE.ipch, it is a binary file.
+.vs\DVDRental\v16\ipch\AutoPCH\ed5236b3bd81b5d2\MAINWINDOW.ipch, it is a binary file.
+.vs\DVDRental\v16\ipch\AutoPCH\ed5236b3bd81b5d2\MAINWINDOW.ipch, it is a binary file.
+.vs\DVDRental\v16\ipch\AutoPCH\f4a9658383ba97f5\RENTAL.ipch, it is a binary file.
+Category.cpp, code is 72, comment is 18, blank is 18.
+Category.h, code is 23, comment is 19, blank is 4.
+database.cpp, code is 37, comment is 11, blank is 10.
+database.h, code is 20, comment is 26, blank is 2.
+debug\Category.obj, it is a binary file.
+debug\database.obj, it is a binary file.
+debug\DVDRental.exe, it is a binary file.
+debug\DVDRental.exe.recipe, code is 11, comment is 0, blank is 0.
+debug\DVDRental.ilk, it is a binary file.
+debug\DVDRental.log, code is 7, comment is 0, blank is 0.
+debug\DVDRental.pdb, it is a binary file.
+debug\DVDRental.tlog\CL.command.1.tlog, it is a binary file.
+debug\DVDRental.tlog\CL.read.1.tlog, it is a binary file.
+debug\DVDRental.tlog\CL.write.1.tlog, it is a binary file.
+debug\DVDRental.tlog\CustomBuild.command.1.tlog, code is 2, comment is 0, blank is 0.
+debug\DVDRental.tlog\CustomBuild.read.1.tlog, code is 2, comment is 0, blank is 0.
+debug\DVDRental.tlog\CustomBuild.write.1.tlog, code is 2, comment is 0, blank is 0.
+debug\DVDRental.tlog\DVDRental.lastbuildstate, code is 2, comment is 0, blank is 0.
+debug\DVDRental.tlog\DVDRental.write.1u.tlog, it is a binary file.
+debug\DVDRental.tlog\link.command.1.tlog, it is a binary file.
+debug\DVDRental.tlog\link.read.1.tlog, it is a binary file.
+debug\DVDRental.tlog\link.write.1.tlog, it is a binary file.
+debug\DVDRental.tlog\moc.read.1u.tlog, it is a binary file.
+debug\DVDRental.tlog\moc.write.1u.tlog, it is a binary file.
+debug\DVDRental.tlog\uic.read.1u.tlog, it is a binary file.
+debug\DVDRental.tlog\uic.write.1u.tlog, it is a binary file.
+debug\DVDRental.vcxproj.FileListAbsolute.txt, code is 1, comment is 0, blank is 0.
+debug\main.obj, it is a binary file.
+debug\mainwindow.obj, it is a binary file.
+debug\moc_mainwindow.cpp, code is 115, comment is 28, blank is 20.
+debug\moc_mainwindow.obj, it is a binary file.
+debug\moc_predefs.h, code is 13, comment is 0, blank is 0.
+debug\moc_predefs.h.cbt, code is 1, comment is 0, blank is 0.
+debug\Product.obj, it is a binary file.
+debug\qt.natvis, code is 682, comment is 1, blank is 53.
+debug\qt_work.log, it is a binary file.
+debug\Rental.obj, it is a binary file.
+debug\User.obj, it is a binary file.
+debug\vc142.pdb, it is a binary file.
+DVDRental.pro, code is 27, comment is 0, blank is 7.
+DVDRental.pro.user, code is 432, comment is 0, blank is 0.
+DVDRental.qtvscr, code is 2057, comment is 0, blank is 0.
+DVDRental.sln, code is 25, comment is 0, blank is 0.
+DVDRental.vcxproj, code is 220, comment is 0, blank is 0.
+DVDRental.vcxproj.filters, code is 100, comment is 0, blank is 0.
+DVDRental.vcxproj.user, code is 10, comment is 0, blank is 0.
+main.cpp, code is 9, comment is 0, blank is 2.
+mainwindow.cpp, code is 15, comment is 2, blank is 4.
+mainwindow.h, code is 20, comment is 1, blank is 6.
+mainwindow.ui, code is 127, comment is 0, blank is 0.
+Product.cpp, code is 104, comment is 25, blank is 25.
+Product.h, code is 35, comment is 31, blank is 5.
+README.md, code is 2, comment is 0, blank is 1.
+release\moc_predefs.h.cbt, code is 1, comment is 0, blank is 0.
+Rental.cpp, code is 79, comment is 19, blank is 21.
+Rental.h, code is 36, comment is 26, blank is 3.
+ui_mainwindow.h, code is 99, comment is 11, blank is 26.
+User.cpp, code is 76, comment is 19, blank is 20.
+User.h, code is 31, comment is 27, blank is 4.
+x64\Debug\qmake\qtvars_x64_Debug.props, code is 60, comment is 0, blank is 0.
+x64\Debug\qmake\temp\.qmake.stash, code is 7, comment is 0, blank is 0.
+x64\Debug\qmake\temp\EDFB5EAA-DF83-370D-A542-66ABBFDCBEC0.DVDRental.designtime.idx, code is 1, comment is 0, blank is 0.
+x64\Debug\qmake\temp\moc_predefs.h.cbt, code is 1, comment is 0, blank is 0.
+x64\Debug\qmake\temp\props.txt, code is 25, comment is 0, blank is 0.
+x64\Debug\qmake\temp\qtvars.log, code is 1, comment is 0, blank is 0.
+x64\Debug\qmake\temp\qtvars.pro, code is 2, comment is 0, blank is 0.
+x64\Debug\qmake\temp\qtvars.vcxproj, code is 84, comment is 0, blank is 0.
+x64\Debug\qmake\temp\qtvars.vcxproj.filters, code is 14, comment is 0, blank is 0.
+x64\Debug\qmake\temp\qtvars_x64_Debug.props, code is 60, comment is 0, blank is 0.
+x64\Release\qmake\qtvars_x64_Release.props, code is 60, comment is 0, blank is 0.
+x64\Release\qmake\temp\.qmake.stash, code is 7, comment is 0, blank is 0.
+x64\Release\qmake\temp\EDFB5EAA-DF83-370D-A542-66ABBFDCBEC0.DVDRental.designtime.idx, code is 1, comment is 0, blank is 0.
+x64\Release\qmake\temp\moc_predefs.h.cbt, code is 1, comment is 0, blank is 0.
+x64\Release\qmake\temp\props.txt, code is 25, comment is 0, blank is 0.
+x64\Release\qmake\temp\qtvars.log, code is 1, comment is 0, blank is 0.
+x64\Release\qmake\temp\qtvars.pro, code is 2, comment is 0, blank is 0.
+x64\Release\qmake\temp\qtvars.vcxproj, code is 89, comment is 0, blank is 0.
+x64\Release\qmake\temp\qtvars.vcxproj.filters, code is 14, comment is 0, blank is 0.
+x64\Release\qmake\temp\qtvars_x64_Release.props, code is 60, comment is 0, blank is 0.
+===============================================================================
