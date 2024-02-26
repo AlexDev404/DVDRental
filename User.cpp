@@ -69,7 +69,7 @@ string User::addr() const {
 	return this->_addr;
 }
 
-// Getter for _desc
+// Getter for _role
 bool User::role() const {
 	return this->_role;
 }

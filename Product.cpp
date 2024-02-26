@@ -16,7 +16,7 @@ Product::Product(database& db) : db(db) {
 	}
 }
 
-Product::Product(database& db, string name, string desc, bool rnt_status, float price, bool type, float rating): db(db) {
+Product::Product(database& db, string name, string descr, bool rnt_status, float price, bool type, float rating): db(db) {
 	QSqlDatabase database = db.getInstance();
 	QSqlQuery query(database);
 
@@ -29,7 +29,7 @@ Product::Product(database& db, string name, string desc, bool rnt_status, float 
 		qDebug() << "Construct_Product: Error getting max ID: " << query.lastError();
 	}
 	this->_name = name;
-	this->_desc = desc;
+	this->_descr = descr;
 	this->_rnt_status = rnt_status;
 	this->_type = type;
 	this->_price = price;
@@ -53,9 +53,9 @@ string Product::name() const {
 	return this->_name;
 }
 
-// Getter for _desc
-string Product::desc() const {
-	return this->_desc;
+// Getter for _descr
+string Product::descr() const {
+	return this->_descr;
 }
 
 // Getter for _rnt_status
@@ -94,9 +94,9 @@ void Product::setName(string name) {
 	this->_name = name;
 }
 
-// Setter for _desc
-void Product::setDesc(string desc) {
-	this->_desc = desc;
+// Setter for _descr
+void Product::setDescr(string descr) {
+	this->_descr = descr;
 }
 
 // Setter for _rnt_status
@@ -144,18 +144,18 @@ void Product::write() {
 	query.bindValue(":id", this->_id);
 	if (query.exec() && query.next() && query.value(0).toInt() > 0) {
 		// The row exists, update it
-		query.prepare("UPDATE products SET c_id = :cid, name = :name, desc = :desc, rnt_status = :rnt_status, type = :type, price = :price, rating = :rating WHERE id = :id");
+		query.prepare("UPDATE products SET c_id = :cid, name = :name, descr = :descr, rnt_status = :rnt_status, type = :type, price = :price, rating = :rating WHERE id = :id");
 	}
 	else {
 		// The row doesn't exist, insert a new one
-		query.prepare("INSERT INTO products (id, c_id, name, desc, rnt_status, type, price, rating) VALUES (:id, :cid, :name, :desc, :rnt_status, :type, :price, :rating)");
+		query.prepare("INSERT INTO products (id, c_id, name, descr, rnt_status, type, price, rating) VALUES (:id, :cid, :name, :descr, :rnt_status, :type, :price, :rating)");
 	}
 
 	// Bind the values and execute the next upcoming/prepared query
 	query.bindValue(":id", this->_id);
 	query.bindValue(":cid", this->_c_id);
 	query.bindValue(":name", QString::fromStdString(this->_name));
-	query.bindValue(":desc", QString::fromStdString(this->_desc));
+	query.bindValue(":descr", QString::fromStdString(this->_descr));
 	query.bindValue(":rnt_status", this->_rnt_status);
 	query.bindValue(":type", this->_type);
 	query.bindValue(":price", this->_price);

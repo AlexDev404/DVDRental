@@ -16,7 +16,7 @@ Category::Category(database& db): db(db) {
 	}
 }
 
-Category::Category(database& db, string name, string desc): db(db) {
+Category::Category(database& db, string name, string descr): db(db) {
 	QSqlDatabase database = db.getInstance();
 	QSqlQuery query(database);
 
@@ -29,7 +29,7 @@ Category::Category(database& db, string name, string desc): db(db) {
 	}
 
 	this->_name = name;
-	this->_desc = desc;
+	this->_descr = descr;
 }
 
 
@@ -44,9 +44,9 @@ string Category::name() const {
 	return this->_name;
 }
 
-// Getter for _desc
-string Category::desc() const {
-	return this->_desc;
+// Getter for _descr
+string Category::descr() const {
+	return this->_descr;
 }
 
 // Setters
@@ -60,9 +60,9 @@ void Category::setName(string name) {
 	this->_name = name;
 }
 
-// Setter for _desc
-void Category::setDesc(string desc) {
-	this->_desc = desc;
+// Setter for _descr
+void Category::setDescr(string descr) {
+	this->_descr = descr;
 }
 
 // Utility
@@ -90,17 +90,17 @@ void Category::write() {
 	query.bindValue(":id", this->_id);
 	if (query.exec() && query.next() && query.value(0).toInt() > 0) {
 		// The row exists, update it
-		query.prepare("UPDATE categories SET name = :name, desc = :desc WHERE id = :id");
+		query.prepare("UPDATE categories SET name = :name, descr = :descr WHERE id = :id");
 	}
 	else {
 		// The row doesn't exist, insert a new one
-		query.prepare("INSERT INTO categories (id, name, desc) VALUES (:id, :name, :desc)");
+		query.prepare("INSERT INTO categories (id, name, descr) VALUES (:id, :name, :descr)");
 	}
 
 	// Bind the values and execute the next upcoming/prepared query
 	query.bindValue(":id", this->_id);
 	query.bindValue(":name", QString::fromStdString(this->_name));
-	query.bindValue(":desc", QString::fromStdString(this->_desc));  // JavaScript's easier, tbh
+	query.bindValue(":descr", QString::fromStdString(this->_descr));  // JavaScript's easier, tbh
 	if (!query.exec()) {
 		qDebug() << "Error writing category to database: " << query.lastError();
 	}

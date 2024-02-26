@@ -180,7 +180,7 @@ std::optional<Product> database::queryProduct(int id) {
         product._id = query.value("id").toInt();
         product._c_id = query.value("c_id").toInt();
         product._name = query.value("name").toString().toStdString();
-        product._desc = query.value("desc").toString().toStdString();
+        product._descr = query.value("descr").toString().toStdString();
         product._rnt_status = query.value("rnt_status").toBool();
         product._type = query.value("type").toBool();
         product._rating = query.value("rating").toFloat();
@@ -217,7 +217,7 @@ std::vector<Product> database::getAllProducts() {
         product._id = query.value("id").toInt();
         product._c_id = query.value("c_id").toInt();
         product._name = query.value("name").toString().toStdString();
-        product._desc = query.value("desc").toString().toStdString();
+        product._descr = query.value("descr").toString().toStdString();
         product._rnt_status = query.value("rnt_status").toBool();
         product._type = query.value("type").toBool();
         product._rating = query.value("rating").toFloat();
@@ -252,7 +252,7 @@ std::optional<Category> database::queryCategory(int id) {
         Category category(*this);
         category._id = query.value("id").toInt();
         category._name = query.value("name").toString().toStdString();
-        category._desc = query.value("desc").toString().toStdString();
+        category._descr = query.value("descr").toString().toStdString();
         return category;
     }
     else {
@@ -284,7 +284,7 @@ std::vector<Category> database::getAllCategories() {
         Category category(*this);
         category._id = query.value("id").toInt();
         category._name = query.value("name").toString().toStdString();
-        category._desc = query.value("desc").toString().toStdString();
+        category._descr = query.value("descr").toString().toStdString();
 
         // Add the category to the vector
         categories.push_back(category);
